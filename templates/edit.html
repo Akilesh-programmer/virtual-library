@@ -10,10 +10,15 @@
     <h1>Book Name: {{ data['title'] }}</h1>
     <h3>Current Rating {{ data['rating'] }}</h3>
 
-    <form action="/edit/{{ data['id'] }}" method="POST">
+    <form action="{{ url_for('edit_page', id=data['id']) }}" method="POST">
         <input type="text" name="new_rating">
         <button type="submit">Change Rating</button>
     </form>
+
+    <!-- <form action="/edit/{{ data['id'] }}" method="POST">
+        <input type="text" name="new_rating">
+        <button type="submit">Change Rating</button>
+    </form> -->
 
 </body>
 </html>
